@@ -2,10 +2,10 @@
 ## Lab
 
 #Linked Lists
-**Single
-**Circular
-**Double
+->>Single
+->>Circular
+->>Double
 
 #Stacks
-**Array Implementation
-**Linked List Implementation
+->>Array Implementation
+->>Linked List Implementation
