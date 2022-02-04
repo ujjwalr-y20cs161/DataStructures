@@ -60,3 +60,6 @@ int main() {
 	for(int i=0;!isEmpty();i++)printf("|%d ",pop());
 	//return pop();
 }
+
+
+//	outputs::	Stack Overflow!|31 |27 |23 |19 |15 |11 |7 |3 |7 |5 |1 Stack Underflow!
