@@ -1,11 +1,11 @@
 # DataStructures
 ## Lab
 
-*Linked Lists
-***Single
-***Circular
-***Double
+#Linked Lists
+**Single
+**Circular
+**Double
 
-*Stacks
-***Array Implementation
-***Linked List Implementation
+#Stacks
+**Array Implementation
+**Linked List Implementation
