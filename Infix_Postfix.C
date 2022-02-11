@@ -1,8 +1,9 @@
-{
+
 #include <stdio.h>
 #include<ctype.h>
 #include<stdbool.h>
 
+//----------------------------------stack---------------------------------------------------------------//
 #define sz 10
 char epr[sz];
 char stack[sz];
@@ -39,13 +40,49 @@ char peek(){
     //just return the top element without removing
     return stack[top];
 }
+
+bool isOperator(char c){
+    if(c == '+'|| c == '-' || c == '*' || c == '/' || c == '^') return true;
+    else return false;
 }
-void Eval(char ex[]){
+
+
+//-------------------------------------------------------------------------------------------//
+
+//-----------------------------------infix and postfix---------------------------------------//
+
+
+int Prec(char c){
+    if(c == '+' || c == '-') return 1;
+    else if(c == '*'|| c =='/') return 2;
+    else if(c =='^') return 3;
+    else return -1;
+}
+
+void Conv(char ex[]){
     int i=0;
     while(ex[i]!='\0'){
+        
         char c = ex[i];
         if(isalpha(c))printf("%c",c);
-        else if(c=='+'||c=='-'||c=='*'||c=='/'||c=='%'||c=='^'||c=='(')push(c);
+        
+        else if(isOperator(c)){
+            if( c == '(')push(c);
+            // else if(Prec(c)>Prec(peek()))push(c);
+
+            else if(c == ')'){
+                while(peek()!='(')
+                {
+                    printf("%c",pop());
+                }
+            }
+             else{ 
+                while(Prec(c)<=Prec(peek())){
+                    printf("%c",pop());
+                }
+                push(c);
+             }
+        }
         i++;
     }
     while(!isEmpty()){printf("%c",pop());}
@@ -54,7 +91,6 @@ void Eval(char ex[]){
 int main(void) {
 	
 	scanf("%s",epr);
-	Eval(epr);
+	Conv(epr);
 	return 0;
 }
-
