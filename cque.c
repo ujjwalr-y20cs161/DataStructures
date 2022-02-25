@@ -19,10 +19,8 @@ int isEmpty(){
 
 void display(){
         printf("\n||");
-        for( int i = 0 ; i < cnt ; i = (i+1)%Z ){
-                 printf(" %d ",cq[fr+i]);
-         }
-         printf("||");
+        for( int i = fr ; i != rr ; i = (i+1)%Z ) printf(" %d ",cq[i]);
+        printf("||");
 }
 
 void Enqueue(int x){
@@ -48,25 +46,26 @@ int Dequeue(){
 
 void Cmt(){printf("\n--count = %d --\n",cnt);}
 
-/*void display(){
-        printf("||");
-        for( int i = 0 ; i < cnt ; i = (i+1)%Z ){
-                printf(" %d ",cq[fr+i]);
+void Dip(){
+        printf("\n>>||");
+        for( int i = 0 ; i < Z; i++){
+                printf(" %d ",cq[i]);
         }
         printf("||");
-}*/
+}
 
 void main(){
         for(int i =0; i<Z-1 ;i++){
                 Enqueue(i+1);
         }
-        Cmt();
-        display();
-        for(int i =0 ; i<Z-2 ;i++){
+        // Cmt();
+        // display();
+        for(int i =0 ; i<Z-1 ;i++){
                 Dequeue();
         }
-        Cmt();
-        display();
-
+        // Cmt();
+        // display();
+        // Dip();
         for(int  i = 1 ; i < 5 ;i++)Enqueue(2*i*10);
+        // Dip();
 }
