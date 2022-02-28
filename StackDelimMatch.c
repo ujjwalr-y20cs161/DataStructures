@@ -33,9 +33,11 @@ char peek(){
 //-----------------------------------------------------------------------------------
 
 bool match(char a , char b){
-    printf("\n>> %c and %c \n",a,b);
     if((a == '(' && b == ')')||(a == '[' && b == ']')||(a == '{' && b == '}'))return true;
-    else return false;
+    else {
+            printf("\n>> %c and %c \n",a,b);
+            return false;
+    }
 }
 
 void Expression(char exp []){
@@ -67,3 +69,11 @@ void main(){
     printf("%s\n",exp);
     Expression(exp);
 }
+
+/*Test runs:
+        one: {{[([]]}}
+        output:         >> ( and ] 
+                        Failure! -->7 , ]
+                        
+        two :   {([])}#
+                Success!
