@@ -1,38 +1,69 @@
+
 #include<stdio.h>
+#include<stdbool.h>
+#include<string.h>
+//--------------------------------------------stack---------------------------------------
+#define sz 25
 
-#define sz 10
-
-char Stack[sz];
+char stack[sz];
 int top = -1;
 
-int Full(){
-    if(top ==  sz-1)return 1;
-    else return 0;
+bool isEmpty(){
+        if(top == -1)return true;
+        else return false;
 }
 
-int Empty(){
-    if(top == -1)return 1;
-    else return 0;
+bool isFull(){
+        if(top == sz) return true;
+        else return false;
 }
 
 void push(char c){
-    if(Full())printf("<< Full >>");
-    else{Stack[++top] = c;}
+        if(isFull())printf("\t Overflow!");
+        else stack[++top] = c;
 }
 
 char pop(){
-    if(Empty) printf("<< Empty >>");
-    else return Stack[top--];
+        if(isEmpty())return;
+        else return stack[top--];
 }
-int isDel(char c){
-    if (c =='(' || c == '{'  || c == '[' ) return 1;
-    else if( c == ')'|| c =='}'|| c == ']') return -1;
-    else return 0;\
+char peek(){
+    return stack[top];
+}
+//-----------------------------------------------------------------------------------
+
+bool match(char a , char b){
+    printf("\n>> %c and %c \n",a,b);
+    if((a == '(' && b == ')')||(a == '[' && b == ']')||(a == '{' && b == '}'))return true;
+    else return false;
 }
 
-void Express(char x[]){
-    char c;
-    for( int i =0, c = x[i] ;c != '\0' ;i++){
-        if()
-    }
+void Expression(char exp []){
+    int i = 0;
+    char c = exp[i];
+    
+    while(c != '#'){
+        if(c == '(' || c == '{' ||  c == '[') push(c);
+        else if( c == ')' || c == '}' || c == ']')
+        {   char x =  peek();
+            if(!match(x,c)){
+                printf("Failure! -->%d , %c",i+1,c);
+                return;
+            }
+            pop();
+        }
+        i++;
+        c = exp[i];
+    }    
+    if(isEmpty())printf("Success!");
+    else printf("Failure!");
+
+}
+
+void main(){
+    char exp[sz];
+    scanf("%s",exp);
+    strcat(exp,"#");
+    printf("%s\n",exp);
+    Expression(exp);
 }
