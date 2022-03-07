@@ -91,6 +91,20 @@ int count(Node* head){
         return c;
 }
 
+Node* deleteEnd(Node* head){
+    printf("\n---------------------Delete-at-end---------------------\n");
+    Node* temp=head;
+    while(temp->next!=NULL){
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
+    Node* tmp2 = temp->next;
+    temp->next = head;
+    head->prev = temp;
+    free(tmp2);
+    return head;
+}
+    
 
 void main(){
         Node *head=NULL;
@@ -100,5 +114,8 @@ void main(){
         display(head);
         head=insertPos(head);
         display(head);
+        head = deleteEnd(head);
+        display(head);
+        
         printf("%d is nodes\n",count(head));
 }
