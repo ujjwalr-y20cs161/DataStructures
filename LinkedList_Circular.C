@@ -97,7 +97,7 @@ Node* insertPos(Node* head){
 
         newnode=malloc(sizeof(Node));
         newnode->data=val;
-        for(int i=1;i<pos-1;i++){
+        for(int i=0;i<pos;i++){
                 temp=temp->next;
         }
         newnode->next=temp->next;
@@ -147,3 +147,41 @@ void main(){
         head=deletePos(head);
         display(head);
 }
+
+/*
+	output::
+			Creating a Circular Linkedlist!
+			Enter val?::5
+			Continue? Y/N:y
+			Enter val?::10
+			Continue? Y/N:y
+			Enter val?::17
+			Continue? Y/N:n
+			--------Display------
+			5 10 17 
+			--------------
+			-------Insert at the Begin-----
+			Val to Insert::21
+			--------Display------
+			21 5 10 17 
+			--------------
+			-------------INSERT AT END------------
+			Val to Insert::14
+			--------Display------
+			21 5 10 17 14 
+			--------------
+			-------------Insert at Position---------
+			Val to Insert::7
+			Enter POS::3
+			--------Display------
+			21 5 10 17 7 14 
+			--------------
+			-----------Delete head-------------
+			--------Display------
+			5 10 17 7 14 
+			--------------
+			------------Delete POS-----not for 1st positon------------
+			Enter the position::3
+			--------Display------
+			5 10 7 14 
+			--------------
