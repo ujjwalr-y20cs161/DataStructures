@@ -71,7 +71,7 @@ void insertPos(){
     printf("position to insert:");
     scanf("%d",&P);
     for(int i=0;i<P;i++)
-    {b 
+    {
         temp=temp->next;
     }
     newnode->data=val;
