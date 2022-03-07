@@ -124,3 +124,19 @@ void main(){
     deletePos();
     display();
 }
+
+/* output::
+                Enter the value:5
+                Y(any number)/N(0):5
+                Enter the value:6
+                Y(any number)/N(0):0
+                5 6 
+                val to insert[Begin]:4
+                4 5 6 
+                val to insert[End]:7
+                4 5 6 7 
+                val to insert[after the Pos]:2
+                position to insert:2
+                4 5 6 2 7 
+                Pos to delete:2 
+                4 5 6 7 
