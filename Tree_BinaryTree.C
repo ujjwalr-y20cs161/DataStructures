@@ -120,6 +120,8 @@ Node* deleteNode(Node* root,int key){
 
         root->Rchild = deleteNode(root->Rchild, temp->data);
     }
+    
+    printf(">>deleted : %d\n",key);
     return root;
 }
 
@@ -137,7 +139,6 @@ void main(){
         printf("|\n");
     }
     root = insert(root,3);
-    printf("delete:\n");
     deleteNode(root,6);
     printf(">>Inorder:");
     Inorder(root);
@@ -152,7 +153,7 @@ void main(){
                 >> 2  4  5  13 |
                 >> 2  4  5  13  17 |
                 >> 2  4  5  6  13  17 |
-                delete:
+                >>delete:6
                 >>Inorder: 2  3  4  5  13  17 
                 >>Postorder: 3  4  2  17  13  5 
                 >>Preorder: 5  2  4  3  13  17 
