@@ -21,4 +21,5 @@
 3.Double Ended
 
 **Trees:**
-1.
+1. Binary Search Tree
+2. AVL Trees
