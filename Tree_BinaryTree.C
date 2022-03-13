@@ -104,7 +104,7 @@ Node* deleteNode(Node* root,int key){
 
     else {
         if (root->Rchild == NULL) {
-            Node* temp = root->Rchild;
+            Node* temp = root->Lchild;
             free(root);
             return temp;
         }
