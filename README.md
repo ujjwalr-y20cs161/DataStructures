@@ -1,14 +1,14 @@
 # DataStructures
 ## Lab
 
-**Linked Lists:**
+<h1>Linked Lists:</h1>
 1. Single
 2. Circular
 3. Double
 4. Polynomial Addition and creation
 5. Polynomial Multiplication
 
-**Stacks:**
+<h1>Stacks:</h1>
 1. Array Implementation
 2. Linked List Implementation
 3. Infix to PostFix Conversion
