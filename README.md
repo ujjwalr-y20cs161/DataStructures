@@ -1,25 +1,25 @@
-# DataStructures
-## Lab
+<h1> DataStructures</h1>
+<h2> Lab</h2>
 
-<h1>Linked Lists:</h1>
+<h3>Linked Lists:</h3>
 1. Single
 2. Circular
 3. Double
 4. Polynomial Addition and creation
 5. Polynomial Multiplication
 
-<h1>Stacks:</h1>
+<h3>Stacks:</h3>
 1. Array Implementation
 2. Linked List Implementation
 3. Infix to PostFix Conversion
 4. PostFix Evaluation
 5. Delimiter Matching
 
-**Queues:**
+<h3>Queues:</h3>
 1. Normal 
 2. Circular
 3. Double Ended
 
-**Trees:**
+<h3>Trees:</h3>
 1. Binary Search Tree
 2. AVL Trees
